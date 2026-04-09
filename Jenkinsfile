@@ -40,3 +40,12 @@ pipeline {
         }
     }
 }
+stage('Deploy to EKS') {
+    steps {
+        sh '''
+        aws eks update-kubeconfig --region $REGION --name cicd-eks-cluster
+        kubectl apply -f https://raw.githubusercontent.com/anjalithakur9414-glitch/my-manifests-repo/main/deployment.yaml
+        kubectl apply -f https://raw.githubusercontent.com/anjalithakur9414-glitch/my-manifests-repo/main/service.yaml
+        '''
+    }
+}
