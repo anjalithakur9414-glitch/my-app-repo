@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCOUNT_ID = "YOUR_AWS_ACCOUNT_ID"
+        AWS_ACCOUNT_ID = "468172542998"
         REGION = "ap-south-1"
         REPO_NAME = "my-app"
         IMAGE_TAG = "latest"
@@ -12,7 +12,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/my-app-repo.git'
+                git 'https://github.com/anjalithakur9414-glitch/my-app-repo.git'
             }
         }
 
